@@ -5,13 +5,19 @@ const PlayerHoldingDiv = styled.div`
     height: 400px;
 `;
 
-const addHolder = styled.div`
-    display: none;
+const AddHolder = styled.div`
     width: 100%;
     height: 100%;
-`
+`;
+
+const FinishTaskButton = styled.button`
+    width: 130px;
+    height: 40px;
+    text-align: center;
+`;
 
 export {
     PlayerHoldingDiv,
-    addHolder
+    AddHolder,
+    FinishTaskButton
 };
