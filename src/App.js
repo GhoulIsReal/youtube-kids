@@ -21,13 +21,26 @@ const Puzzle = React.lazy(() => {
   return import("./games/Puzzle/Puzzle");
 });
 
+const Shop = React.lazy(() => {
+  return import("./games/Shop/Shop");
+});
+
 function App() {
   return (
     // <div className="App">
-    //   {/* <PlayerHolder /> */}
+    //   <PlayerHolder />
     //   <animated.div key={"key"}>
     //     <Suspense fallback={""}>
-    //       <ImagesProvider
+    //       {/* <ImagesProvider
+    //         r={require.context(
+    //           "./games/Shop/images/",
+    //           true,
+    //           /\.(png|jpe?g|svg)$/
+    //         )}
+    //       >
+    //         <Shop />
+    //       </ImagesProvider> */}
+    //       {/* <ImagesProvider
     //         r={require.context(
     //           "./games/Puzzle/images/",
     //           false,
@@ -35,7 +48,7 @@ function App() {
     //         )}
     //       >
     //         <Puzzle />
-    //       </ImagesProvider>
+    //       </ImagesProvider> */}
     //     </Suspense>
     //   </animated.div>
     // </div>
