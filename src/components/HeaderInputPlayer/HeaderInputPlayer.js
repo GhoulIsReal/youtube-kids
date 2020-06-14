@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import * as styled from "./HeaderInputPlayerStyles";
 import { Player } from "../Player/Player";
 import HeaderAndInput from "../HeaderAndInput/HeaderAndInput";
+
+import randomInt from "../../common/utils/randomInt"
 
 function HeaderInputPlayer() {
   const initialState = {
@@ -53,28 +55,31 @@ function HeaderInputPlayer() {
     }
   };
 
+  const games = ["puzzle", "shop", "memory"];
+
+  const GamesController = React.lazy(() => import("../GamesController/GamesController"));
+
+  const Game = () => (<Suspense fallback={""}><GamesController currentGame={games[randomInt(0, games.length)]} goBackToVideo={checkAnswer} /></Suspense>)
+
   return (
-    <styled.HeaderContentContainer>
-      <styled.HeaderAndContentHolder>
-        <HeaderAndInput onSubmit={onSubmit}></HeaderAndInput>
-        <styled.PlayerHoldingDiv>
-          {!state.watchComplete && state.popStatus === 1 ? (
-            <styled.AddHolder>
-              <styled.FinishTaskButton onClick={checkAnswer}>
-                Back to video
-              </styled.FinishTaskButton>
-            </styled.AddHolder>
-          ) : (
-            <Player
-              onProgress={handleProgress}
-              // onPlay={playTheVieo}
-              playing={state.videoPlaying}
-              url={state.url + state.timing}
-            />
-          )}
-        </styled.PlayerHoldingDiv>
-      </styled.HeaderAndContentHolder>
-    </styled.HeaderContentContainer>
+    <div>
+      {!state.watchComplete && state.popStatus === 1 ?
+        (<Game />) : (
+          <styled.HeaderContentContainer>
+            <styled.HeaderAndContentHolder>
+              <HeaderAndInput onSubmit={onSubmit}></HeaderAndInput>
+              <styled.PlayerHoldingDiv>
+                <Player
+                  onProgress={handleProgress}
+                  // onPlay={playTheVieo}
+                  playing={state.videoPlaying}
+                  url={state.url + state.timing}
+                />
+              </styled.PlayerHoldingDiv>
+            </styled.HeaderAndContentHolder>
+          </styled.HeaderContentContainer>)
+      }
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const GameContainer = styled.div`
+  margin: auto;
   max-width: 990px;
   height: 95vh;
   max-height: 900px;

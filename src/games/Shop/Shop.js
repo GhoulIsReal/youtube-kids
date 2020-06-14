@@ -11,6 +11,8 @@ import { GameContainer, ShopContainer } from "./styles";
 import { vegetables, fruits, other } from "./config";
 import bg from "./images/bg.png";
 
+import "./Shop.css";
+
 const Shop = props => {
 
   const [productsToBuy, setProductsToBuy] = useState([]);
@@ -87,6 +89,7 @@ const Shop = props => {
             reset={reset}
             status={status}
             selectedIndex={selectedIndex}
+            goBackToVideo={props.goBackToVideo}
           />
 
           <Control fail={fail} status={status} />

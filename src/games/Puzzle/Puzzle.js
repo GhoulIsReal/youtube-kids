@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-import { Game, Nav } from "../../common/styles";
+import { Game, Button } from "../../common/styles";
 import { GameContainer, WinContainer } from "./styles";
 
 import DraggableList from "./components/DraggableList";
@@ -9,7 +9,9 @@ import DraggableList from "./components/DraggableList";
 
 import { useImagesContext } from "../../contexts/ImagesContext";
 
-export default () => {
+import randomInt from "../../common/utils/randomInt";
+
+export default (props) => {
   const { images } = useImagesContext();
   const [currentImage, setCurrentImage] = useState(null);
   const [completed, setCompleted] = useState(false);
@@ -23,7 +25,8 @@ export default () => {
 
   useEffect(() => {
     if (Object.keys(images).length > 0) {
-      setCurrentImage(images["1.png"]);
+      const imageNumber = randomInt(1, Object.keys(images).length)
+      setCurrentImage(images[`${imageNumber}.png`]);
     }
   }, [images]);
 
@@ -52,16 +55,19 @@ export default () => {
     }
   };
 
+  console.log(props);
+
   return (
     <Game bg={images["bg.png"]} size="400px" filter="1" style={{paddingRight: '10%'}}>
       {/* <Nav type="back" to="/shop" /> */}
       <GameContainer>
-          <div className="options" onClick={select}>
-            <img src={images["1.png"]} alt="puzzle1" />
+          <div className="options">
+            {/* <img src={images["1.png"]} alt="puzzle1" />
             <img src={images["2.png"]} alt="puzzle2" />
             <img src={images["3.png"]} alt="puzzle3" />
             <img src={images["4.png"]} alt="puzzle4" />
-            <img src={images["5.png"]} alt="puzzle5" />
+            <img src={images["5.png"]} alt="puzzle5" /> */}
+            <Button onClick={completed && props.goBackToVideo}>{completed ? "Go back to video!" : "Test"}</Button>
           </div>
           <div className="inner">
           {content}

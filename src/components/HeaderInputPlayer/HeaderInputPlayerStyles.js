@@ -16,6 +16,7 @@ const HeaderAndContentHolder = styled.div`
 `;
 
 const PlayerHoldingDiv = styled.div`
+    border-radius: 20px;
     width: 900px;
     height: 500px;
     background: url(${cover}) center center;

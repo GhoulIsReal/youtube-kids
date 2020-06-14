@@ -1,11 +1,14 @@
 import React from 'react';
+import { Button } from '../../../common/styles'
 
 export default ({
     round,
-    restart
+    gameFinished,
+    goBackToVideo
 }) => (
     <div>
-        <h2>Round: {round}</h2>
-        <button className="button button--warning text-center" onClick={() => restart()} disabled={round === 0}>Restart</button>
+        <Button className="button button--warning text-center" onClick={gameFinished && goBackToVideo} disabled={round === 0}>
+            { gameFinished ? "Go Back To Video!" : "Test" }
+        </Button>
     </div>
 )

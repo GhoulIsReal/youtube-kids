@@ -25,7 +25,7 @@ export const GameContainer = styled.div`
   .options {
     align-self: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 15%;
     width: 100%;
     padding: 0 10%;

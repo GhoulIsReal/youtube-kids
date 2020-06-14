@@ -7,7 +7,7 @@ import { Rules, Task, Container } from "./styles";
 import { Button } from "../../../../common/styles";
 
 export default props => {
-  const { productsToBuy, status, selectedIndex, reset} = props;
+  const { productsToBuy, status, selectedIndex, reset, goBackToVideo} = props;
   const { images } = useImagesContext();
 
   const propsSelected = useSpring({
@@ -22,7 +22,7 @@ export default props => {
               { (status === 'win' ) && (<>Well done!</>)}
               {status === 'fail' && 'Try one more time!'}
               {!status && 'Click at products and pack a bag in 25 seconds!'}
-              <Button onClick={reset}>New game!</Button>
+              <Button onClick={(status === 'win' ) ? goBackToVideo : reset}>{ (status === 'win' ) ? (<>Go back to video!</>) : (<>Start!</>)}</Button>
             </Rules>
         )}
 

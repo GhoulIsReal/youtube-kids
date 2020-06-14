@@ -19,11 +19,12 @@ const mapDispatchToProps = (dispatch) => ({
 class Memory extends Component {
 
     render() {
-        const { memory, actions } = this.props;
+        const { memory, actions, goBackToVideo } = this.props;
+        const gameFinished = !memory.cards.some(card => !card.discovered);
 
         return (
             <div className="container">
-                <Header round={memory.round} restart={actions.restart} />
+                <Header round={memory.round} gameFinished={gameFinished} goBackToVideo={goBackToVideo} />
                 <CardList cards={memory.cards} flipCard={actions.flipCard} />
             </div>
         )
