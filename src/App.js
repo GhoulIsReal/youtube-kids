@@ -2,6 +2,13 @@ import React, { Suspense } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
 //Components
 import PlayerHolder from './components/PlayerHolder/PlayerHolder';
 
@@ -14,6 +21,10 @@ const Puzzle = React.lazy(() => {
 
 const Shop = React.lazy(() => {
   return import("./games/Shop/Shop");
+});
+
+const Memory = React.lazy(() => {
+  return import("./games/Memory/containers/Memory");
 });
 
 function App() {
@@ -43,7 +54,16 @@ function App() {
     //     </Suspense>
     //   </animated.div>
     // </div>
-    <PlayerHolder></PlayerHolder>
+    <Router>
+      <Suspense fallback={""}>
+      <Switch>
+        {/* <PlayerHolder></PlayerHolder> */}
+        <Route exact path="/" component={PlayerHolder} />
+        <Route exact path="/mem" render={() => (<Memory />)} />
+        <Redirect to="404" />
+      </Switch>
+      </Suspense>
+    </Router>
   )
 }
 
