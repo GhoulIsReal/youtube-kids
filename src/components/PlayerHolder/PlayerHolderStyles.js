@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 
+const InputAndContentHolder = styled.div`
+    width: 1000px;
+    height: 620px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+`;
+
 const PlayerHoldingDiv = styled.div`
-    width: 500px;
-    height: 400px;
+    width: 900px;
+    height: 500px;
 `;
 
 const AddHolder = styled.div`
@@ -17,6 +26,7 @@ const FinishTaskButton = styled.button`
 `;
 
 export {
+    InputAndContentHolder,
     PlayerHoldingDiv,
     AddHolder,
     FinishTaskButton

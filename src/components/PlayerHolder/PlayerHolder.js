@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as styled from "./PlayerHolderStyles";
 import { Player } from "../Player/Player";
+import { Input } from "../Input/Input";
 
-const PlayerHolder = () => {
+function PlayerHolder() {
   const initialState = {
     watchComplete: false,
     videoPlaying: false,
-    url: "https://www.youtube.com/watch?v=0gNY0KZ2nyY",
+    input: '', 
+    url: '',
     playedSeconds: 0,
     popStatus: 0,
   };
@@ -39,23 +41,49 @@ const PlayerHolder = () => {
     }));
   };
 
+  function usePrevious(value) {
+    const ref = useRef();
+    useEffect(() => {
+      ref.current = value;
+    });
+    return ref.current;
+  }
+
+  const prevUrl = usePrevious(state.url);
+
+  const onKeyDown = (event) => {
+    let e = event.target.value
+    if(event.key === "Enter"){
+      console.log(prevUrl)
+      setState((prev) => ({
+        ...prev,
+        url: e,
+        popStatus: prevUrl === state.url && state.popStatus === 2 ? 2 : 0,
+        watchComplete: false,
+      }))
+    }
+  }
+
   return (
-    <styled.PlayerHoldingDiv>
-      {!state.watchComplete && state.popStatus === 1 ? (
-        <styled.AddHolder>
-          <styled.FinishTaskButton onClick={checkAnswer}>
-            Back to video
-          </styled.FinishTaskButton>
-        </styled.AddHolder>
-      ) : (
-        <Player
-          onProgress={handleProgress}
-          // onPlay={playTheVieo}
-          playing={state.videoPlaying}
-          url={state.url}
-        />
-      )}
-    </styled.PlayerHoldingDiv>
+      <styled.InputAndContentHolder>
+        <Input onKeyDown={onKeyDown}></Input>
+        <styled.PlayerHoldingDiv>
+          {!state.watchComplete && state.popStatus === 1 ? (
+            <styled.AddHolder>
+              <styled.FinishTaskButton onClick={checkAnswer}>
+                Back to video
+              </styled.FinishTaskButton>
+            </styled.AddHolder>
+          ) : (
+            <Player
+              onProgress={handleProgress}
+              // onPlay={playTheVieo}
+              playing={state.videoPlaying}
+              url={state.url}
+            />
+          )}
+        </styled.PlayerHoldingDiv>
+      </styled.InputAndContentHolder>
   );
 };
 
