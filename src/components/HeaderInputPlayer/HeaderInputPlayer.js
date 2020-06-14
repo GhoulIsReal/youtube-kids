@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import * as styled from "./PlayerHolderStyles";
+import * as styled from "./HeaderInputPlayerStyles";
 import { Player } from "../Player/Player";
-import { Input } from "../Input/Input";
+import HeaderAndInput from "../HeaderAndInput/HeaderAndInput";
 
-function PlayerHolder() {
+function HeaderInputPlayer() {
   const initialState = {
     watchComplete: false,
     videoPlaying: false,
-    input: '', 
-    url: '',
+    input: "",
+    url: "",
+    timing: "",
     playedSeconds: 0,
     popStatus: 0,
   };
@@ -35,38 +36,27 @@ function PlayerHolder() {
   const checkAnswer = () => {
     setState((prev) => ({
       ...prev,
-			popStatus: 2,
-			url: `${state.url}?t=${Math.round(state.playedSeconds)}`,
-			videoPlaying: true,
+      popStatus: 2,
+      timing: `?t=${Math.round(state.playedSeconds)}`,
+      videoPlaying: true,
     }));
   };
 
-  function usePrevious(value) {
-    const ref = useRef();
-    useEffect(() => {
-      ref.current = value;
-    });
-    return ref.current;
-  }
-
-  const prevUrl = usePrevious(state.url);
-
-  const onKeyDown = (event) => {
-    let e = event.target.value
-    if(event.key === "Enter"){
-      console.log(prevUrl)
-      setState((prev) => ({
-        ...prev,
-        url: e,
-        popStatus: prevUrl === state.url && state.popStatus === 2 ? 2 : 0,
-        watchComplete: false,
-      }))
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const value = event.target.input_name.value;
+    if (value !== state.url) {
+      setState({
+        ...initialState,
+        url: value,
+      });
     }
-  }
+  };
 
   return (
-      <styled.InputAndContentHolder>
-        <Input onKeyDown={onKeyDown}></Input>
+    <styled.HeaderContentContainer>
+      <styled.HeaderAndContentHolder>
+        <HeaderAndInput onSubmit={onSubmit}></HeaderAndInput>
         <styled.PlayerHoldingDiv>
           {!state.watchComplete && state.popStatus === 1 ? (
             <styled.AddHolder>
@@ -79,12 +69,13 @@ function PlayerHolder() {
               onProgress={handleProgress}
               // onPlay={playTheVieo}
               playing={state.videoPlaying}
-              url={state.url}
+              url={state.url + state.timing}
             />
           )}
         </styled.PlayerHoldingDiv>
-      </styled.InputAndContentHolder>
+      </styled.HeaderAndContentHolder>
+    </styled.HeaderContentContainer>
   );
-};
+}
 
-export default PlayerHolder;
+export default HeaderInputPlayer;
