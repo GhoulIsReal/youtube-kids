@@ -11,7 +11,6 @@ function HeaderInputPlayer() {
   const initialState = {
     watchComplete: false,
     videoPlaying: false,
-    input: "",
     url: "",
     timing: "",
     playedSeconds: 0,
@@ -70,13 +69,16 @@ function HeaderInputPlayer() {
           <styled.HeaderContentContainer>
             <styled.HeaderAndContentHolder>
               <HeaderAndInput onSubmit={onSubmit}></HeaderAndInput>
-              <styled.PlayerHoldingDiv>
-                <Player
-                  onProgress={handleProgress}
-                  playing={state.videoPlaying}
-                  url={state.url + state.timing}
-                />
-              </styled.PlayerHoldingDiv>
+              {state.url === '' ? 
+                ('') : (
+                <styled.PlayerHoldingDiv>
+                  <Player
+                    onProgress={handleProgress}
+                    playing={state.videoPlaying}
+                    url={state.url + state.timing}
+                  />
+                </styled.PlayerHoldingDiv>)
+              }
               <DescriptionAndDivider />
               <Footer />
             </styled.HeaderAndContentHolder>

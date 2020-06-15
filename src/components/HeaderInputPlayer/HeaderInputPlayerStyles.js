@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import cover from './cover.jpg';
+import styled, { keyframes } from 'styled-components';
 
 const HeaderContentContainer = styled.div`
     background-color: #f1faee;
@@ -17,7 +16,6 @@ const HeaderAndContentHolder = styled.div`
 
 const PlayerHoldingDiv = styled.div`
     border-radius: 20px;
-    background: url(${cover}) center center;
     margin-top: 50px;
 `;
 
