@@ -4,6 +4,8 @@ import { Player } from "../Player/Player";
 import HeaderAndInput from "../HeaderAndInput/HeaderAndInput";
 
 import randomInt from "../../common/utils/randomInt"
+import DescriptionAndDivider from "../DescriptionAndDivider/DescriptionAndDivider";
+import Footer from "../Footer/Footer";
 
 function HeaderInputPlayer() {
   const initialState = {
@@ -75,6 +77,8 @@ function HeaderInputPlayer() {
                   url={state.url + state.timing}
                 />
               </styled.PlayerHoldingDiv>
+              <DescriptionAndDivider />
+              <Footer />
             </styled.HeaderAndContentHolder>
           </styled.HeaderContentContainer>)
       }
