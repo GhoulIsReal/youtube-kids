@@ -67,7 +67,7 @@ export default (props) => {
             <img src={images["3.png"]} alt="puzzle3" />
             <img src={images["4.png"]} alt="puzzle4" />
             <img src={images["5.png"]} alt="puzzle5" /> */}
-            <Button onClick={completed && props.goBackToVideo}>{completed ? "Go back to video!" : "Test"}</Button>
+            <Button onClick={completed && props.goBackToVideo}>{completed ? "Go back to video!" : "Puzzle"}</Button>
           </div>
           <div className="inner">
           {content}

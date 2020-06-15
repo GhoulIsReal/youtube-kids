@@ -19,13 +19,9 @@ const GamesController = React.lazy(() => import("./components/GamesController/Ga
 
 function App() {
   return (
-    // <div className="App">
-    //   <PlayerHolder />
-    // </div>
     <Router>
       <Suspense fallback={""}>
       <Switch>
-        {/* <PlayerHolder></PlayerHolder> */}
         <Route exact path="/" component={HeaderInputPlayer} />
         <Route exact path="/mem" render={() => (<GamesController currentGame={games[randomInt(0, games.length)]}/>)} />
         <Redirect to="404" />

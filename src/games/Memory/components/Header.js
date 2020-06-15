@@ -8,7 +8,7 @@ export default ({
 }) => (
     <div>
         <Button className="button button--warning text-center" onClick={gameFinished && goBackToVideo} disabled={round === 0}>
-            { gameFinished ? "Go Back To Video!" : "Test" }
+            { gameFinished ? "Go Back To Video!" : "Train memory game" }
         </Button>
     </div>
 )

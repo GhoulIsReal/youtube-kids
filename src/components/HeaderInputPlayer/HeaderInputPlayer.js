@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import * as styled from "./HeaderInputPlayerStyles";
 import { Player } from "../Player/Player";
 import HeaderAndInput from "../HeaderAndInput/HeaderAndInput";
@@ -71,7 +71,6 @@ function HeaderInputPlayer() {
               <styled.PlayerHoldingDiv>
                 <Player
                   onProgress={handleProgress}
-                  // onPlay={playTheVieo}
                   playing={state.videoPlaying}
                   url={state.url + state.timing}
                 />

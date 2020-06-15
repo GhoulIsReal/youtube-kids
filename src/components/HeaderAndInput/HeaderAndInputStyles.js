@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
 const HeaderAndInputHolder = styled.header`
-    height: 55px;
+    height: 95px;
     width: 100vw;
     background-color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
 `;
 
 const Logo = styled.img`
-    height: 50px;
+    height: 55px;
     width: 100px;
 `;
 
@@ -22,10 +20,10 @@ const Form = styled.form`
 
 const Input = styled.input`
     width: 760px;
-    height: 35px;
-    padding: 10px 16px;
+    height: 55px;
+    padding: 0 16px 0 16px;
     border: 3px solid #e63946;
-    border-radius: 6px;
+    border-radius: 10px;
     font-size: 1.2rem;
     &:focus {
         outline: 0;

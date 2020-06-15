@@ -8,8 +8,8 @@ const Player = ({ onProgress, url, playing, onPlay }) => {
 			<ReactPlayer 
 				url={url}
 				controls={true}
-				width="100%"
-				height="100%"
+				width="889px"
+				height="500px"
 				playing={playing}
 				onProgress={onProgress}
 				onPlay={onPlay}
