@@ -63,28 +63,26 @@ function HeaderInputPlayer() {
   const Game = () => (<Suspense fallback={""}><GamesController currentGame={games[randomInt(0, games.length)]} goBackToVideo={checkAnswer} /></Suspense>)
 
   return (
-    <div>
-      {!state.watchComplete && state.popStatus === 1 ?
-        (<Game />) : (
-          <styled.HeaderContentContainer>
-            <styled.HeaderAndContentHolder>
-              <HeaderAndInput onSubmit={onSubmit}></HeaderAndInput>
-              {state.url === '' ? 
-                ('') : (
-                <styled.PlayerHoldingDiv>
-                  <Player
-                    onProgress={handleProgress}
-                    playing={state.videoPlaying}
-                    url={state.url + state.timing}
-                  />
-                </styled.PlayerHoldingDiv>)
-              }
-              <DescriptionAndDivider />
-              <Footer />
-            </styled.HeaderAndContentHolder>
-          </styled.HeaderContentContainer>)
-      }
-    </div>
+    <styled.HeaderContentContainer>
+      <styled.HeaderAndContentHolder>
+        <HeaderAndInput onSubmit={onSubmit}></HeaderAndInput>
+        {!(!state.watchComplete && state.popStatus === 1) ?
+          (<>{!!(state.url.length) &&
+            <styled.PlayerHoldingDiv>
+              <Player
+                onProgress={handleProgress}
+                playing={state.videoPlaying}
+                url={state.url + state.timing}
+              />
+            </styled.PlayerHoldingDiv>
+          }
+            <DescriptionAndDivider />
+            <Footer /></>)
+          :
+          (<Game />)
+        }
+      </styled.HeaderAndContentHolder>
+    </styled.HeaderContentContainer>
   );
 }
 

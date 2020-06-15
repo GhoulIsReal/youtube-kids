@@ -28,7 +28,7 @@ const TimerDefault = ({ status }) => {
     <>
       {status === "fail" ? <Bum /> : null}
 
-      <Timer style={propsBalloon}>25</Timer>
+      <Timer style={propsBalloon}>60</Timer>
       <TimerThread style={propsThread} />
     </>
   );

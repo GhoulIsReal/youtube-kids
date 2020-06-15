@@ -15,7 +15,7 @@ export default function memory(state = initialState, action) {
 
             let newState = { round : state.round + 1 };
 
-            if(state.round % 2 == 1) {
+            if(state.round % 2 === 1) {
                 let cardClicked = state.cards.find((card) => {
                     return card.id === action.id;
                 });

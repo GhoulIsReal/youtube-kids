@@ -2,20 +2,20 @@ export default () => {
     let cards = [];
 
     for (let i = 0; i < 16; i+=2) {
-        let index = Math.floor(Math.random() * 1000);
+        let index = Math.floor(Math.random() * 150);
 
         cards.push({
             id : i,
             rel : i+1,
             flipped : false,
-            url : `https://picsum.photos/176/176?image=${index}`,
+            url : `https://picsum.photos/id/${index}/150/150`,
             discovered : false
         });
         cards.push({
             id : i+1,
             rel : i,
             flipped : false,
-            url : `https://picsum.photos/176/176?image=${index}`,
+            url : `https://picsum.photos/id/${index}/150/150`,
             discovered : false
         });
     }

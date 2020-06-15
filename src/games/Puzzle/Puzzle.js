@@ -47,27 +47,12 @@ export default (props) => {
     );
   }
 
-  const select = event => {
-    const image = event.target.closest("img");
-    if (image) {
-      setCurrentImage(image.src);
-      setCompleted(false);
-    }
-  };
-
-  console.log(props);
-
   return (
-    <Game bg={images["bg.png"]} size="400px" filter="1" style={{paddingRight: '10%'}}>
+    <Game bg={images["bg.png"]} size="400px" filter="1" >
       {/* <Nav type="back" to="/shop" /> */}
       <GameContainer>
           <div className="options">
-            {/* <img src={images["1.png"]} alt="puzzle1" />
-            <img src={images["2.png"]} alt="puzzle2" />
-            <img src={images["3.png"]} alt="puzzle3" />
-            <img src={images["4.png"]} alt="puzzle4" />
-            <img src={images["5.png"]} alt="puzzle5" /> */}
-            <Button onClick={completed && props.goBackToVideo}>{completed ? "Go back to video!" : "Puzzle"}</Button>
+            <Button onClick={completed ? props.goBackToVideo : undefined}>{completed ? "Go back to video!" : "Puzzle"}</Button>
           </div>
           <div className="inner">
           {content}

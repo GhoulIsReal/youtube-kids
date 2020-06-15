@@ -63,7 +63,7 @@ export const Button = styled.button`
   font-weight: 500;
   padding: 1rem;
   border-radius: 30px;
-  margin-top: 10%;
+  margin-top: 10px;
   cursor: pointer;
   font-family: "Indie Flower", cursive, -apple-system;
   text-transform: uppercase;

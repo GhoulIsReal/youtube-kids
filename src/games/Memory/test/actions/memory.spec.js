@@ -1,6 +1,6 @@
 import expect from 'expect'
 import * as types from '../../constants/memory'
-import * as actions from '../../actions/memory'
+import actions from '../../actions/memory'
 
 describe('memory actions', () => {
   it('flipCard should create FLIP_CARD action', () => {

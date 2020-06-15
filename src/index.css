@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#f1faee;
   overflow-x: hidden;
   background-color: #f1faee;
 }
@@ -23,4 +24,8 @@ iframe {
 .underlined {
   color: #457b9d;
   margin: 0 6px;
+}
+
+#root {
+  width: 100vw;
 }

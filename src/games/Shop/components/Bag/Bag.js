@@ -21,7 +21,7 @@ export default props => {
             <Rules>
               { (status === 'win' ) && (<>Well done!</>)}
               {status === 'fail' && 'Try one more time!'}
-              {!status && 'Click at products and pack a bag in 25 seconds!'}
+              {!status && 'Click at products and pack a bag in 60 seconds!'}
               <Button onClick={(status === 'win' ) ? goBackToVideo : reset}>{ (status === 'win' ) ? (<>Go back to video!</>) : (<>Start!</>)}</Button>
             </Rules>
         )}

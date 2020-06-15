@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 import { ImagesProvider } from "../../contexts/ImagesContext";
-import { useTransition, animated } from "react-spring";
+import { animated } from "react-spring";
 
 const Puzzle = React.lazy(() => {
     return import("../../games/Puzzle/Puzzle");
@@ -17,7 +17,7 @@ const Memory = React.lazy(() => {
 
 const GamesController = ({ currentGame, goBackToVideo }) => {
     return (
-        <div className="GamesController">
+        <div className="GamesController" style={{ width: "100vw" }} >
             <animated.div key={"key"}>
                 <Suspense fallback={""}>
                     {"shop" === currentGame && <ImagesProvider

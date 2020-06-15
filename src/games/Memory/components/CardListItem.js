@@ -16,7 +16,7 @@ export default ({
             <div className={cardClass}>
                 <div className="front" onClick={() => flipCard(card.id)}></div>
         		<div className="back">
-                    <img src={card.url} />
+                    <img src={card.url} alt="" />
         		</div>
         	</div>
         </li>

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import Bag from "./components/Bag/Bag";
 import Items from "./components/Items";
-import { Nav, Roof } from "../../common/styles";
+import { Roof } from "../../common/styles";
 import Control from "./components/Control";
 
 import { Game } from "../../common/styles";
