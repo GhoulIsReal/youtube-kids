@@ -21,8 +21,8 @@ function App() {
     <Router>
       <Suspense fallback={""}>
       <Switch>
-        <Route exact path="/" component={HeaderInputPlayer} />
-        <Route exact path="/mem" render={() => (<GamesController currentGame={games[randomInt(0, games.length)]}/>)} />
+        <Route exact path="/" render={() => <HeaderInputPlayer currentGame={games[randomInt(0, games.length)]} />} />
+        <Route exact path="/mem" render={() => (<GamesController currentGame={games[randomInt(0, games.length)]} />)} />
         <Redirect to="404" />
       </Switch>
       </Suspense>
