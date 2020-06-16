@@ -60,7 +60,7 @@ function HeaderInputPlayer() {
 
   const GamesController = React.lazy(() => import("../GamesController/GamesController"));
 
-  const Game = () => (<Suspense fallback={""}><GamesController currentGame={games[randomInt(0, games.length)]} goBackToVideo={checkAnswer} /></Suspense>)
+  const Game = (props) => (<Suspense fallback={""}><GamesController currentGame={props.currentGame} goBackToVideo={checkAnswer} /></Suspense>)
 
   return (
     <styled.HeaderContentContainer>
@@ -79,7 +79,7 @@ function HeaderInputPlayer() {
             <DescriptionAndDivider />
             <Footer /></>)
           :
-          (<Game />)
+          (<Game currentGame={games[randomInt(0, games.length)]} />)
         }
       </styled.HeaderAndContentHolder>
     </styled.HeaderContentContainer>
