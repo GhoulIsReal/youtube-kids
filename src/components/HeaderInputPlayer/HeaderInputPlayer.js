@@ -2,12 +2,10 @@ import React, { useState, Suspense } from "react";
 import * as styled from "./HeaderInputPlayerStyles";
 import { Player } from "../Player/Player";
 import HeaderAndInput from "../HeaderAndInput/HeaderAndInput";
-
-import randomInt from "../../common/utils/randomInt"
 import DescriptionAndDivider from "../DescriptionAndDivider/DescriptionAndDivider";
 import Footer from "../Footer/Footer";
 
-function HeaderInputPlayer() {
+function HeaderInputPlayer({ currentGame }) {
   const initialState = {
     watchComplete: false,
     videoPlaying: false,
@@ -56,11 +54,9 @@ function HeaderInputPlayer() {
     }
   };
 
-  const games = ["puzzle", "shop", "memory"];
-
   const GamesController = React.lazy(() => import("../GamesController/GamesController"));
 
-  const Game = () => (<Suspense fallback={""}><GamesController currentGame={games[randomInt(0, games.length)]} goBackToVideo={checkAnswer} /></Suspense>)
+  const Game = (props) => (<Suspense fallback={""}><GamesController currentGame={props.currentGame} goBackToVideo={checkAnswer} /></Suspense>)
 
   return (
     <styled.HeaderContentContainer>
@@ -79,7 +75,7 @@ function HeaderInputPlayer() {
             <DescriptionAndDivider />
             <Footer /></>)
           :
-          (<Game />)
+          (<Game currentGame={currentGame} />)
         }
       </styled.HeaderAndContentHolder>
     </styled.HeaderContentContainer>
