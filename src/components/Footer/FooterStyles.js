@@ -8,6 +8,8 @@ const FooterHolder = styled.div`
     height: 50px;
     width: 760px;
     border-top: 1px #dadada solid;
+    position: absolute;
+    bottom: 0;
 `;
 
 const Footer = styled.p`
