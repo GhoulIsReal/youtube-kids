@@ -5,8 +5,8 @@
     "static/js/1.09e74ae3.chunk.js": "/youtube-kids/static/js/1.09e74ae3.chunk.js",
     "static/js/1.09e74ae3.chunk.js.map": "/youtube-kids/static/js/1.09e74ae3.chunk.js.map",
     "main.css": "/youtube-kids/static/css/main.43b152c3.chunk.css",
-    "main.js": "/youtube-kids/static/js/main.a770bef5.chunk.js",
-    "main.js.map": "/youtube-kids/static/js/main.a770bef5.chunk.js.map",
+    "main.js": "/youtube-kids/static/js/main.de87e647.chunk.js",
+    "main.js.map": "/youtube-kids/static/js/main.de87e647.chunk.js.map",
     "reactPlayerDailyMotion.js": "/youtube-kids/static/js/reactPlayerDailyMotion.122be331.chunk.js",
     "reactPlayerDailyMotion.js.map": "/youtube-kids/static/js/reactPlayerDailyMotion.122be331.chunk.js.map",
     "reactPlayerFacebook.js": "/youtube-kids/static/js/reactPlayerFacebook.f70a7acd.chunk.js",
@@ -46,7 +46,7 @@
     "static/js/20.c2e43846.chunk.js": "/youtube-kids/static/js/20.c2e43846.chunk.js",
     "static/js/20.c2e43846.chunk.js.map": "/youtube-kids/static/js/20.c2e43846.chunk.js.map",
     "index.html": "/youtube-kids/index.html",
-    "precache-manifest.b0de70b5e7dbf8616dc5950ece3523b6.js": "/youtube-kids/precache-manifest.b0de70b5e7dbf8616dc5950ece3523b6.js",
+    "precache-manifest.bf4056199c7cf611019b18aee991759a.js": "/youtube-kids/precache-manifest.bf4056199c7cf611019b18aee991759a.js",
     "service-worker.js": "/youtube-kids/service-worker.js",
     "static/css/18.435e924f.chunk.css.map": "/youtube-kids/static/css/18.435e924f.chunk.css.map",
     "static/css/19.43cd3e7e.chunk.css.map": "/youtube-kids/static/css/19.43cd3e7e.chunk.css.map",
@@ -90,6 +90,6 @@
     "static/js/runtime-main.44634268.js",
     "static/js/16.9ffc5097.chunk.js",
     "static/css/main.43b152c3.chunk.css",
-    "static/js/main.a770bef5.chunk.js"
+    "static/js/main.de87e647.chunk.js"
   ]
 }

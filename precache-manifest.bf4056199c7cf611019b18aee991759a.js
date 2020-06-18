@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d3c6b9a8a8c46f89a9cbfe3540b8b725",
+    "revision": "7264f4b3cc4d8e418fb7eb24344e8358",
     "url": "/youtube-kids/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/youtube-kids/static/css/19.43cd3e7e.chunk.css"
   },
   {
-    "revision": "1c70923f9232c79bca5e",
+    "revision": "00a5e5f9d5dbf3b4cd25",
     "url": "/youtube-kids/static/css/main.43b152c3.chunk.css"
   },
   {
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/youtube-kids/static/js/20.c2e43846.chunk.js"
   },
   {
-    "revision": "1c70923f9232c79bca5e",
-    "url": "/youtube-kids/static/js/main.a770bef5.chunk.js"
+    "revision": "00a5e5f9d5dbf3b4cd25",
+    "url": "/youtube-kids/static/js/main.de87e647.chunk.js"
   },
   {
     "revision": "1f2ccdb77253d6897840",
