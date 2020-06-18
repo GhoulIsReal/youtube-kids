@@ -1,0 +1,1 @@
+{"version":3,"sources":["Shop.css"],"names":[],"mappings":"AAAA,iBACI,qBAAsB,CACtB,QAAS,CACT,SACJ","file":"19.43cd3e7e.chunk.css","sourcesContent":["*, ::after, ::before {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}"]}
